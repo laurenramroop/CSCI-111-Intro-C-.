@@ -1,0 +1,21 @@
+//Designed to shift all inputs in an array by one position
+
+#include <iostream>
+using namespace std;
+
+int n;
+void advance (int x[n], int y){
+  int temp= x[y - 1];
+  for (int r = 0; r < y; r++){
+    x[r] = x[r - 1];
+  }
+  x[0] = temp;
+  return;
+}
+
+int main(){
+  int x[5] = {3, 1, 4, 1, 5};
+  advance(x, 5);
+  cout << x[0] << x[1] << x[2] << x[3] << x[4] << endl; // prints 53141
+  return 0;
+}
